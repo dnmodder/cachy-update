@@ -69,13 +69,14 @@ msgstr ""
 "${name}.conf yapılandırma dosyasında AUR paket desteği için ayarlanan "
 "${aur_helper} AUR yardımcısı bulunamadı\\n"
 
-#: src/lib/common.sh:175
+#: src/lib/common.sh:177
 #, sh-format
 msgid ""
-"A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
-msgstr "Yetki yükseltme komutu gerekiyor (sudo, sudo-rs, doas veya run0)\\n"
+"A privilege elevation command is required (sudo, sudo-rs, doas, run0 or "
+"pkexec)\\n"
+msgstr "Yetki yükseltme komutu gerekiyor (sudo, sudo-rs, doas, run0 veya pkexec)\\n"
 
-#: src/lib/common.sh:180
+#: src/lib/common.sh:182
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -84,7 +85,7 @@ msgstr ""
 "${name}.conf yapılandırma dosyasında yetki yükseltme için ayarlanan "
 "${su_cmd} komutu bulunamadı\\n"
 
-#: src/lib/common.sh:192
+#: src/lib/common.sh:194
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
