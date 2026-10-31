@@ -54,6 +54,9 @@ endif
 	install -Dm 644 "res/desktop/${pkgname}.desktop" "${DESTDIR}${PREFIX}/share/applications/${pkgname}.desktop"
 	install -Dm 644 "res/desktop/${pkgname}-tray.desktop" "${DESTDIR}${PREFIX}/share/applications/${pkgname}-tray.desktop"
 
+	# Install polkit policy
+	install -Dm 644 "res/polkit/org.cachyos.cachy-update.policy" "${DESTDIR}${PREFIX}/share/polkit-1/actions/org.cachyos.cachy-update.policy"
+
 	# Install systemd units
 	install -Dm 644 "res/systemd/${pkgname}.service" "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.service"
 	install -Dm 644 "res/systemd/${pkgname}.timer" "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.timer"
@@ -116,6 +119,9 @@ uninstall:
 	# Delete .desktop files
 	rm -f "${DESTDIR}${PREFIX}/share/applications/${pkgname}.desktop"
 	rm -f "${DESTDIR}${PREFIX}/share/applications/${pkgname}-tray.desktop"
+
+	# Delete polkit policy
+	rm -f "${DESTDIR}${PREFIX}/share/polkit-1/actions/org.cachyos.cachy-update.policy"
 
 	# Delete systemd units
 	rm -f "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.service"

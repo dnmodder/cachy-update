@@ -171,8 +171,10 @@ check_su_cmd () {
 			su_cmd="doas"
 		elif command -v run0 > /dev/null; then
 			su_cmd="run0"
+		elif command -v pkexec > /dev/null; then
+			su_cmd="pkexec"
 		else
-			error_msg "$(eval_gettext "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\n")" && quit_msg
+			error_msg "$(eval_gettext "A privilege elevation command is required (sudo, sudo-rs, doas, run0 or pkexec)\n")" && quit_msg
 			exit 2
 		fi
 	else
@@ -198,6 +200,8 @@ check_diff_prog () {
 				diff_prog_opt=("env" "DIFFPROG=${diff_prog}")
 			elif [ "${su_cmd}" == "run0" ]; then
 				diff_prog_opt+=("--setenv=DIFFPROG=${diff_prog}")
+			elif [ "${su_cmd}" == "pkexec" ]; then
+				diff_prog_opt=("env" "DIFFPROG=${diff_prog}")
 			fi
 		fi
 	fi

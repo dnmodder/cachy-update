@@ -24,7 +24,7 @@ Features:
 - Check for pacnew & pacsave files (and offers to process them if there are).
 - Check for pending kernel update requiring a reboot (and offers to do so if there's one).
 - Check for services requiring a post upgrade restart (and offers to do so if there are).
-- Support for `sudo`, `sudo-rs`, `doas` & `run0`.
+- Support for `sudo`, `sudo-rs`, `doas`, `run0` & `pkexec`.
 - Extensive CLI.
 
 Optional support for:
@@ -160,7 +160,7 @@ See https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#configu
 
 *1* Invalid option.
 
-*2* No privilege elevation command (`sudo`, `sudo-rs`, `doas` or `run0`) is installed or the one set in the `arch-update.conf` configuration file isn't found.
+*2* No privilege elevation command (`sudo`, `sudo-rs`, `doas`, `run0` or `pkexec`) is installed or the one set in the `arch-update.conf` configuration file isn't found.
 
 *3* Error when launching the Arch-Update systray applet.
 

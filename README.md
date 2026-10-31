@@ -30,7 +30,7 @@ Features:
 - Check for old & uninstalled packages in cache (and offers to remove them if there are).
 - Check for pending kernel update requiring a reboot (and offers to do so if there's one).
 - Check for services requiring a post upgrade restart (and offers to do so if there are).
-- Support for `sudo`, `sudo-rs`, `doas` & `run0`.
+- Support for `sudo`, `sudo-rs`, `doas`, `run0` & `pkexec`.
 - Extensive CLI.
 
 Optional support for:
@@ -77,6 +77,7 @@ Additional optional dependencies you might want or need:
 - [sudo](https://archlinux.org/packages/core/x86_64/sudo/): Privilege elevation
 - [sudo-rs](https://archlinux.org/packages/extra/x86_64/sudo-rs/): Privilege elevation
 - [opendoas](https://archlinux.org/packages/extra/x86_64/opendoas/): Privilege elevation
+- [polkit](https://archlinux.org/packages/extra/x86_64/polkit/): Privilege elevation via pkexec
 
 Install required build and test dependencies:
 

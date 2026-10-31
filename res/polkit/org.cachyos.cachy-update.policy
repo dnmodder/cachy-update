@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+"http://www.freedesktop.org/software/polkit/policyconfig-1.dtd">
+<policyconfig>
+
+  <vendor>CachyOS</vendor>
+  <vendor_url>https://cachyos.org</vendor_url>
+
+  <action id="org.cachyos.cachy-update.pacman">
+    <description>Update system packages</description>
+    <description xml:lang="be">Абнаўленне сістэмных пакункаў</description>
+    <description xml:lang="bg">Обновяване на системните пакети</description>
+    <description xml:lang="ca">Actualització de paquets del sistema</description>
+    <description xml:lang="de">Systempakete aktualisieren</description>
+    <description xml:lang="es">Actualizar paquetes del sistema</description>
+    <description xml:lang="eu">Sistemako paketeak eguneratu</description>
+    <description xml:lang="fr">Mettre à jour les paquets du système</description>
+    <description xml:lang="hu">Rendszercsomagok frissítése</description>
+    <description xml:lang="it">Aggiorna i pacchetti di sistema</description>
+    <description xml:lang="ja">システムパッケージのアップデート</description>
+    <description xml:lang="ka">სისტემური პაკეტების განახლება</description>
+    <description xml:lang="nb">Oppdater systempakker</description>
+    <description xml:lang="nl">Systeempakketten bijwerken</description>
+    <description xml:lang="pt-BR">Atualizar pacotes do sistema</description>
+    <description xml:lang="pt-PT">Atualizar pacotes do sistema</description>
+    <description xml:lang="ru">Обновление системных пакетов</description>
+    <description xml:lang="sv">Uppdatera systempaket</description>
+    <description xml:lang="tr">Sistem paketlerini güncelle</description>
+    <description xml:lang="zh-CN">更新系统软件包</description>
+    <description xml:lang="zh-TW">更新系統軟體包</description>
+    <message>Authentication is required to update system packages</message>
+    <message xml:lang="be">Для абнаўлення сістэмных пакункаў патрабуецца аўтэнтыфікацыя</message>
+    <message xml:lang="bg">Изисква се удостоверяване за обновяване на системните пакети</message>
+    <message xml:lang="ca">Cal autenticació per actualitzar els paquets del sistema</message>
+    <message xml:lang="de">Zur Aktualisierung von Systempaketen ist eine Authentifizierung erforderlich</message>
+    <message xml:lang="es">Se requiere autenticación para actualizar los paquetes del sistema</message>
+    <message xml:lang="eu">Autentifikazioa behar da sistemako paketeak eguneratzeko</message>
+    <message xml:lang="fr">Une authentification est requise pour mettre à jour les paquets du système</message>
+    <message xml:lang="hu">A rendszercsomagok frissítéséhez hitelesítés szükséges</message>
+    <message xml:lang="it">È richiesta l'autenticazione per aggiornare i pacchetti di sistema</message>
+    <message xml:lang="ja">システムパッケージをアップデートするには認証が必要です</message>
+    <message xml:lang="ka">სისტემური პაკეტების განსაახლებლად საჭიროა ავთენტიკაცია</message>
+    <message xml:lang="nb">Autentisering kreves for å oppdatere systempakker</message>
+    <message xml:lang="nl">Authenticatie is vereist om systeempakketten bij te werken</message>
+    <message xml:lang="pt-BR">É necessária autenticação para atualizar os pacotes do sistema</message>
+    <message xml:lang="pt-PT">É necessária autenticação para atualizar os pacotes do sistema</message>
+    <message xml:lang="ru">Требуется аутентификация для обновления системных пакетов</message>
+    <message xml:lang="sv">Autentisering krävs för att uppdatera systempaket</message>
+    <message xml:lang="tr">Sistem paketlerini güncellemek için kimlik doğrulaması gereklidir</message>
+    <message xml:lang="zh-CN">更新系统软件包需要身份验证</message>
+    <message xml:lang="zh-TW">更新系統軟體包需要身份驗證</message>
+    <icon_name>cachy-update-blue</icon_name>
+    <defaults>
+      <allow_any>no</allow_any>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/pacman</annotate>
+    <annotate key="org.freedesktop.policykit.imply">org.cachyos.cachy-update.paccache org.cachyos.cachy-update.checkservices org.cachyos.cachy-update.pacdiff org.cachyos.cachy-update.systemctl-restart</annotate>
+  </action>
+
+  <action id="org.cachyos.cachy-update.paccache">
+    <description>Clean package cache</description>
+    <description xml:lang="be">Ачыстка кэшу пакункаў</description>
+    <description xml:lang="bg">Изчистване на кеша на пакетите</description>
+    <description xml:lang="ca">Neteja de la memòria cau de paquets</description>
+    <description xml:lang="de">Paket-Cache bereinigen</description>
+    <description xml:lang="es">Limpiar caché de paquetes</description>
+    <description xml:lang="eu">Paketeen cachea garbitu</description>
+    <description xml:lang="fr">Nettoyer le cache des paquets</description>
+    <description xml:lang="hu">Csomaggyorsítótár tisztítása</description>
+    <description xml:lang="it">Pulisci la cache dei pacchetti</description>
+    <description xml:lang="ja">パッケージキャッシュの消去</description>
+    <description xml:lang="ka">პაკეტების ქეშის გასუფთავება</description>
+    <description xml:lang="nb">Rens pakkehurtigbuffer</description>
+    <description xml:lang="nl">Pakketcache opschonen</description>
+    <description xml:lang="pt-BR">Limpar cache de pacotes</description>
+    <description xml:lang="pt-PT">Limpar cache de pacotes</description>
+    <description xml:lang="ru">Очистка кэша пакетов</description>
+    <description xml:lang="sv">Rensa paketcache</description>
+    <description xml:lang="tr">Paket önbelleğini temizle</description>
+    <description xml:lang="zh-CN">清理软件包缓存</description>
+    <description xml:lang="zh-TW">清理軟體包快取</description>
+    <message>Authentication is required to clean the package cache</message>
+    <message xml:lang="be">Для ачысткі кэшу пакункаў патрабуецца аўтэнтыфікацыя</message>
+    <message xml:lang="bg">Изисква се удостоверяване за изчистване на кеша на пакетите</message>
+    <message xml:lang="ca">Cal autenticació per netejar la memòria cau de paquets</message>
+    <message xml:lang="de">Zur Bereinigung des Paket-Caches ist eine Authentifizierung erforderlich</message>
+    <message xml:lang="es">Se requiere autenticación para limpiar la caché de paquetes</message>
+    <message xml:lang="eu">Autentifikazioa behar da paketeen cachea garbitzeko</message>
+    <message xml:lang="fr">Une authentification est requise pour nettoyer le cache des paquets</message>
+    <message xml:lang="hu">A csomaggyorsítótár tisztításához hitelesítés szükséges</message>
+    <message xml:lang="it">È richiesta l'autenticazione per pulire la cache dei pacchetti</message>
+    <message xml:lang="ja">パッケージキャッシュを消去するには認証が必要です</message>
+    <message xml:lang="ka">პაკეტების ქეშის გასასუფთავებლად საჭიროა ავთენტიკაცია</message>
+    <message xml:lang="nb">Autentisering kreves for å rense pakkehurtigbufferen</message>
+    <message xml:lang="nl">Authenticatie is vereist om de pakketcache op te schonen</message>
+    <message xml:lang="pt-BR">É necessária autenticação para limpar o cache de pacotes</message>
+    <message xml:lang="pt-PT">É necessária autenticação para limpar a cache de pacotes</message>
+    <message xml:lang="ru">Требуется аутентификация для очистки кэша пакетов</message>
+    <message xml:lang="sv">Autentisering krävs för att rensa paketcachen</message>
+    <message xml:lang="tr">Paket önbelleğini temizlemek için kimlik doğrulaması gereklidir</message>
+    <message xml:lang="zh-CN">清理软件包缓存需要身份验证</message>
+    <message xml:lang="zh-TW">清理軟體包快取需要身份驗證</message>
+    <icon_name>cachy-update-blue</icon_name>
+    <defaults>
+      <allow_any>no</allow_any>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/paccache</annotate>
+  </action>
+
+  <action id="org.cachyos.cachy-update.checkservices">
+    <description>Check services requiring restart</description>
+    <description xml:lang="be">Праверка сэрвісаў, якія патрабуюць перазапуску</description>
+    <description xml:lang="bg">Проверка на услуги, изискващи рестартиране</description>
+    <description xml:lang="ca">Comprovació dels serveis que requereixen reinici</description>
+    <description xml:lang="de">Dienste prüfen, die einen Neustart erfordern</description>
+    <description xml:lang="es">Comprobar servicios que requieren reinicio</description>
+    <description xml:lang="eu">Berrabiarazi behar diren zerbitzuak egiaztatu</description>
+    <description xml:lang="fr">Vérifier les services nécessitant un redémarrage</description>
+    <description xml:lang="hu">Újraindítást igénylő szolgáltatások ellenőrzése</description>
+    <description xml:lang="it">Verifica i servizi che richiedono il riavvio</description>
+    <description xml:lang="ja">再起動が必要なサービスの確認</description>
+    <description xml:lang="ka">გადატვირთვის მომთხოვნი სერვისების შემოწმება</description>
+    <description xml:lang="nb">Sjekk tjenester som krever omstart</description>
+    <description xml:lang="nl">Diensten controleren die herstart moeten worden</description>
+    <description xml:lang="pt-BR">Verificar serviços que precisam de reinicialização</description>
+    <description xml:lang="pt-PT">Verificar serviços que necessitam de reinício</description>
+    <description xml:lang="ru">Проверка служб, требующих перезапуска</description>
+    <description xml:lang="sv">Kontrollera tjänster som kräver omstart</description>
+    <description xml:lang="tr">Yeniden başlatılması gereken servisleri denetle</description>
+    <description xml:lang="zh-CN">检查需要重启的服务</description>
+    <description xml:lang="zh-TW">檢查需要重新啟動的服務</description>
+    <message>Authentication is required to check services requiring a restart</message>
+    <message xml:lang="be">Для праверкі сэрвісаў, якія патрабуюць перазапуску, патрабуецца аўтэнтыфікацыя</message>
+    <message xml:lang="bg">Изисква се удостоверяване за проверка на услугите, изискващи рестартиране</message>
+    <message xml:lang="ca">Cal autenticació per comprovar els serveis que requereixen un reinici</message>
+    <message xml:lang="de">Zur Überprüfung von Diensten, die einen Neustart erfordern, ist eine Authentifizierung erforderlich</message>
+    <message xml:lang="es">Se requiere autenticación para comprobar los servicios que requieren reinicio</message>
+    <message xml:lang="eu">Autentifikazioa behar da berrabiarazi behar diren zerbitzuak egiaztatzeko</message>
+    <message xml:lang="fr">Une authentification est requise pour vérifier les services nécessitant un redémarrage</message>
+    <message xml:lang="hu">Az újraindítást igénylő szolgáltatások ellenőrzéséhez hitelesítés szükséges</message>
+    <message xml:lang="it">È richiesta l'autenticazione per verificare i servizi che richiedono il riavvio</message>
+    <message xml:lang="ja">再起動が必要なサービスを確認するには認証が必要です</message>
+    <message xml:lang="ka">გადატვირთვის მომთხოვნი სერვისების შესამოწმებლად საჭიროა ავთენტიკაცია</message>
+    <message xml:lang="nb">Autentisering kreves for å sjekke tjenester som krever omstart</message>
+    <message xml:lang="nl">Authenticatie is vereist om diensten te controleren die herstart moeten worden</message>
+    <message xml:lang="pt-BR">É necessária autenticação para verificar os serviços que precisam de reinicialização</message>
+    <message xml:lang="pt-PT">É necessária autenticação para verificar os servicios que necessitam de reinício</message>
+    <message xml:lang="ru">Требуется аутентификация для проверки служб, требующих перезапуска</message>
+    <message xml:lang="sv">Autentisering krävs för att kontrollera tjänster som kräver omstart</message>
+    <message xml:lang="tr">Yeniden başlatılması gereken servisleri denetlemek için kimlik doğrulaması gereklidir</message>
+    <message xml:lang="zh-CN">检查需要重启的服务需要身份验证</message>
+    <message xml:lang="zh-TW">檢查需要重新啟動的服務需要身份驗證</message>
+    <icon_name>cachy-update-blue</icon_name>
+    <defaults>
+      <allow_any>no</allow_any>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/checkservices</annotate>
+  </action>
+
+  <action id="org.cachyos.cachy-update.pacdiff">
+    <description>Manage configuration files</description>
+    <description xml:lang="be">Кіраванне файламі канфігурацыі</description>
+    <description xml:lang="bg">Управление на конфигурационни файлове</description>
+    <description xml:lang="ca">Gestió de fitxers de configuració</description>
+    <description xml:lang="de">Konfigurationsdateien verwalten</description>
+    <description xml:lang="es">Gestionar archivos de configuración</description>
+    <description xml:lang="eu">Konfigurazio-fitxategiak kudeatu</description>
+    <description xml:lang="fr">Gérer les fichiers de configuration</description>
+    <description xml:lang="hu">Konfigurációs fájlok kezelése</description>
+    <description xml:lang="it">Gestisci i file di configurazione</description>
+    <description xml:lang="ja">設定ファイルの管理</description>
+    <description xml:lang="ka">კონფიგურაციის ფაილების მართვა</description>
+    <description xml:lang="nb">Håndter konfigurasjonsfiler</description>
+    <description xml:lang="nl">Configuratiebestanden beheren</description>
+    <description xml:lang="pt-BR">Gerenciar arquivos de configuração</description>
+    <description xml:lang="pt-PT">Gerir ficheiros de configuração</description>
+    <description xml:lang="ru">Управление файлами конфигурации</description>
+    <description xml:lang="sv">Hantera konfigurationsfiler</description>
+    <description xml:lang="tr">Yapılandırma dosyalarını yönet</description>
+    <description xml:lang="zh-CN">管理配置文件</description>
+    <description xml:lang="zh-TW">管理設定檔案</description>
+    <message>Authentication is required to manage configuration files</message>
+    <message xml:lang="be">Для кіравання файламі канфігурацыі патрабуецца аўтэнтыфікацыя</message>
+    <message xml:lang="bg">Изисква се удостоверяване за управление на конфигурационните файлове</message>
+    <message xml:lang="ca">Cal autenticació per gestionar els fitxers de configuració</message>
+    <message xml:lang="de">Zur Verwaltung von Konfigurationsdateien ist eine Authentifizierung erforderlich</message>
+    <message xml:lang="es">Se requiere autenticación para gestionar archivos de configuración</message>
+    <message xml:lang="eu">Autentifikazioa behar da konfigurazio-fitxategiak kudeatzeko</message>
+    <message xml:lang="fr">Une authentification est requise pour gérer les fichiers de configuration</message>
+    <message xml:lang="hu">A konfigurációs fájlok kezeléséhez hitelesítés szükséges</message>
+    <message xml:lang="it">È richiesta l'autenticazione per gestire i file di configurazione</message>
+    <message xml:lang="ja">設定ファイルを管理するには認証が必要です</message>
+    <message xml:lang="ka">კონფიგურაციის ფაილების სამართავად საჭიროა ავთენტიკაცია</message>
+    <message xml:lang="nb">Autentisering kreves for å håndtere konfigurasjonsfiler</message>
+    <message xml:lang="nl">Authenticatie is vereist om configuratiebestanden te beheren</message>
+    <message xml:lang="pt-BR">É necessária autenticação para gerenciar arquivos de configuração</message>
+    <message xml:lang="pt-PT">É necessária autenticação para gerir ficheiros de configuração</message>
+    <message xml:lang="ru">Требуется аутентификация для управления файлами конфигурации</message>
+    <message xml:lang="sv">Autentisering krävs för att hantera konfigurationsfiler</message>
+    <message xml:lang="tr">Yapılandırma dosyalarını yönetmek için kimlik doğrulaması gereklidir</message>
+    <message xml:lang="zh-CN">管理配置文件需要身份验证</message>
+    <message xml:lang="zh-TW">管理設定檔案需要身份驗證</message>
+    <icon_name>cachy-update-blue</icon_name>
+    <defaults>
+      <allow_any>no</allow_any>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/pacdiff</annotate>
+  </action>
+
+  <action id="org.cachyos.cachy-update.systemctl-restart">
+    <description>Restart system services</description>
+    <description xml:lang="be">Перазапуск сістэмных сэрвісаў</description>
+    <description xml:lang="bg">Рестартиране на системните услуги</description>
+    <description xml:lang="ca">Reinici de serveis del sistema</description>
+    <description xml:lang="de">Systemdienste neu starten</description>
+    <description xml:lang="es">Reiniciar servicios del sistema</description>
+    <description xml:lang="eu">Sistemako zerbitzuak berrabiarazi</description>
+    <description xml:lang="fr">Redémarrer les services système</description>
+    <description xml:lang="hu">Rendszerszolgáltatások újraindítása</description>
+    <description xml:lang="it">Riavvia i servizi di sistema</description>
+    <description xml:lang="ja">システムサービスの再起動</description>
+    <description xml:lang="ka">სისტემური სერვისების გადატვირთვა</description>
+    <description xml:lang="nb">Start systemtjenester på nytt</description>
+    <description xml:lang="nl">Systeemdiensten herstarten</description>
+    <description xml:lang="pt-BR">Reiniciar serviços do sistema</description>
+    <description xml:lang="pt-PT">Reiniciar serviços do sistema</description>
+    <description xml:lang="ru">Перезапуск системных служб</description>
+    <description xml:lang="sv">Starta om systemtjänster</description>
+    <description xml:lang="tr">Sistem servislerini yeniden başlat</description>
+    <description xml:lang="zh-CN">重启系统服务</description>
+    <description xml:lang="zh-TW">重新啟動系統服務</description>
+    <message>Authentication is required to restart system services</message>
+    <message xml:lang="be">Для перазапуску сістэмных сэрвісаў патрабуецца аўтэнтыфікацыя</message>
+    <message xml:lang="bg">Изисква се удостоверяване за рестартиране на системните услуги</message>
+    <message xml:lang="ca">Cal autenticació per reiniciar els serveis del sistema</message>
+    <message xml:lang="de">Zum Neustart von Systemdiensten ist eine Authentifizierung erforderlich</message>
+    <message xml:lang="es">Se requiere autenticación para reiniciar servicios del sistema</message>
+    <message xml:lang="eu">Autentifikazioa behar da sistemako zerbitzuak berrabiarazteko</message>
+    <message xml:lang="fr">Une authentification est requise pour redémarrer les services système</message>
+    <message xml:lang="hu">A rendszerszolgáltatások újraindításához hitelesítés szükséges</message>
+    <message xml:lang="it">È richiesta l'autenticazione per riavviare i servizi di sistema</message>
+    <message xml:lang="ja">システムサービスを再起動するには認証が必要です</message>
+    <message xml:lang="ka">სისტემური სერვისების გადასატვირთად საჭიროა ავთენტიკაცია</message>
+    <message xml:lang="nb">Autentisering kreves for å starte systemtjenester på nytt</message>
+    <message xml:lang="nl">Authenticatie is vereist om systeemdiensten te herstarten</message>
+    <message xml:lang="pt-BR">É necessária autenticação para reiniciar serviços do sistema</message>
+    <message xml:lang="pt-PT">É necessária autenticação para reiniciar serviços do sistema</message>
+    <message xml:lang="ru">Требуется аутентификация для перезапуска системных служб</message>
+    <message xml:lang="sv">Autentisering krävs för att starta om systemtjänster</message>
+    <message xml:lang="tr">Sistem servislerini yeniden başlatmak için kimlik doğrulaması gereklidir</message>
+    <message xml:lang="zh-CN">重启系统服务需要身份验证</message>
+    <message xml:lang="zh-TW">重新啟動系統服務需要身份驗證</message>
+    <icon_name>cachy-update-blue</icon_name>
+    <defaults>
+      <allow_any>no</allow_any>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/systemctl</annotate>
+    <annotate key="org.freedesktop.policykit.exec.argv1">restart</annotate>
+  </action>
+
+</policyconfig>
